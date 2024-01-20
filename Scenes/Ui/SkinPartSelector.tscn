@@ -1,0 +1,564 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6gxfl6j7rk4t"]
+
+[ext_resource type="Texture2D" uid="uid://mbylq40qiwxq" path="res://Textures/elytra.png" id="1_1dwn4"]
+[ext_resource type="Script" path="res://src/UI/SkinPartSelector.cs" id="1_cg1ie"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -977.0
+offset_bottom = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cg1ie")
+
+[node name="Player-SkinParts" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -180.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Body_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -41.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="Body_FrontSide" type="TextureButton" parent="Player-SkinParts/Body_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/Body_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="LeftArm_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -41.0
+offset_right = 50.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="LeftArm_FrontSide" type="TextureButton" parent="Player-SkinParts/LeftArm_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/LeftArm_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="RightArm_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -41.0
+offset_right = -30.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="RightArm_FrontSide" type="TextureButton" parent="Player-SkinParts/RightArm_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/RightArm_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="Head_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="Head_FrontSide" type="TextureButton" parent="Player-SkinParts/Head_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/Head_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="LeftLeg_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.75
+offset_top = -60.0
+offset_right = -1.75
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="LeftLeg_FrontSide" type="TextureButton" parent="Player-SkinParts/LeftLeg_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/LeftLeg_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="RightLeg_FrontSide-Background" type="ColorRect" parent="Player-SkinParts"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2.25
+offset_top = -60.0
+offset_right = 22.25
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="RightLeg_FrontSide" type="TextureButton" parent="Player-SkinParts/RightLeg_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-SkinParts/RightLeg_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="PlayerAccesory-SkinParts" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -388.0
+offset_bottom = -207.999
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BodyAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -41.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="BodyAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/BodyAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/BodyAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="LeftArmAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -41.0
+offset_right = 50.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="LeftArmAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/LeftArmAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/LeftArmAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="RightArmAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -41.0
+offset_right = -30.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="RightArmAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/RightArmAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/RightArmAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="HeadAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="HeadAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/HeadAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/HeadAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="LeftLegAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.75
+offset_top = -60.0
+offset_right = -1.75
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="LeftLegAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/LeftLegAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/LeftLegAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="RightLegAccesory_FrontSide-Background" type="ColorRect" parent="PlayerAccesory-SkinParts"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 2.25
+offset_top = -60.0
+offset_right = 22.25
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="RightLegAccesory_FrontSide" type="TextureButton" parent="PlayerAccesory-SkinParts/RightLegAccesory_FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 60)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 60.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="PlayerAccesory-SkinParts/RightLegAccesory_FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="Player-Cape" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -180.0
+offset_right = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="FrontSide-Background" type="ColorRect" parent="Player-Cape"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -41.0
+offset_right = 24.9999
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="FrontSide" type="TextureButton" parent="Player-Cape/FrontSide-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-Cape/FrontSide-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="ElytraButton-Background" type="ColorRect" parent="Player-Cape"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 45.0
+offset_right = 20.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.188235)
+
+[node name="ElytraButton" type="TextureButton" parent="Player-Cape/ElytraButton-Background"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_1dwn4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Hover-ColorRect" type="ColorRect" parent="Player-Cape/ElytraButton-Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.235294)
+
+[node name="Selected-ColorRect" type="ColorRect" parent="Player-Cape/ElytraButton-Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.32549)

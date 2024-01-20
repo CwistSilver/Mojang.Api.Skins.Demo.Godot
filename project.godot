@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Mojang.Api.Skins DEMO"
+config/version="1.0.1"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://logo.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://logo.png"
+boot_splash/minimum_display_time=1200
+
+[dotnet]
+
+project/assembly_name="Mojang.Api.Skins.Godot"
+project/solution_directory="src/"
+
+[editor]
+
+naming/scene_name_casing=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

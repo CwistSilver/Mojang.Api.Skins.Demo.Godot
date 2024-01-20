@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1lj7mo33g4s1"]
+
+[ext_resource type="PackedScene" uid="uid://qilbktgq6ugs" path="res://3D_Models/Imports/Minecraft-Cape.glb" id="1_xo72i"]
+[ext_resource type="Material" uid="uid://bcpjum5t4hvb1" path="res://Material/PlayerCapeShaderMaterial.tres" id="2_c4f82"]
+
+[node name="Minecraft-Cape" instance=ExtResource("1_xo72i")]
+
+[node name="Cape" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_c4f82")

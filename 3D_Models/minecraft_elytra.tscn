@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://1860d0k83d34"]
+
+[ext_resource type="PackedScene" uid="uid://dstd3ieyld70n" path="res://3D_Models/Imports/Minecraft-Elytra.glb" id="1_dqvlk"]
+[ext_resource type="Material" uid="uid://bcpjum5t4hvb1" path="res://Material/PlayerCapeShaderMaterial.tres" id="2_4x06l"]
+
+[node name="Minecraft-Elytra" instance=ExtResource("1_dqvlk")]
+
+[node name="Elytra_Left" parent="." index="0"]
+transform = Transform3D(0, -0.999848, 0.019634, 1.94656, -0.00481057, -0.310045, 0.558166, 0.0167764, 1.08125, 0, 0, -0.572)
+surface_material_override/0 = ExtResource("2_4x06l")
+
+[node name="Elytra_Right" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_4x06l")

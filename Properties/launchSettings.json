@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Mojang.Api.Skins.Godot": {
+      "commandName": "Project"
+    },
+    "Godot": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Godot\\v4.2.1\\Godot_v4.2.1-stable_mono_win64.exe",
+      "commandLineArgs": "--path . --verbose",
+      "workingDirectory": ".",
+      "nativeDebugging": true
+    }
+  }
+}

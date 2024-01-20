@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bfhh2vsr1oruy"]
+
+[ext_resource type="Shader" path="res://Shaders/PlayerShader.gdshader" id="1_v508w"]
+[ext_resource type="Texture2D" uid="uid://dn1n734e6wdul" path="res://Textures/skin_steve.png" id="2_km726"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v508w")
+shader_parameter/Texture2DParameter = ExtResource("2_km726")

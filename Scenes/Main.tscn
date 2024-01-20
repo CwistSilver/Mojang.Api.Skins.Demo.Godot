@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://lbqarbn48q5x"]
+
+[ext_resource type="PackedScene" uid="uid://cuiroo77vaqwn" path="res://Scenes/Ui/InfromationUI.tscn" id="1_h78jt"]
+[ext_resource type="Script" path="res://src/Camera/OrbitCamera.cs" id="2_13ma3"]
+[ext_resource type="Script" path="res://src/Nodes/PlayerNode.cs" id="3_y8g58"]
+[ext_resource type="Material" uid="uid://bfhh2vsr1oruy" path="res://Material/PlayerShaderMaterial.tres" id="4_2n0rv"]
+[ext_resource type="Material" uid="uid://u8iwi5iheb5y" path="res://Material/PlayerAccesoryShaderMaterial.tres" id="5_adhdh"]
+[ext_resource type="Material" uid="uid://bcpjum5t4hvb1" path="res://Material/PlayerCapeShaderMaterial.tres" id="6_de7q5"]
+[ext_resource type="PackedScene" uid="uid://b4ubenku344fo" path="res://3D_Models/minecraft_classic_player-test.tscn" id="7_freum"]
+[ext_resource type="PackedScene" uid="uid://dc454na4rd3s" path="res://3D_Models/minecraft_slim_player.tscn" id="8_gbweu"]
+[ext_resource type="PackedScene" uid="uid://qilbktgq6ugs" path="res://3D_Models/Imports/Minecraft-Cape.glb" id="9_2yjio"]
+[ext_resource type="PackedScene" uid="uid://1860d0k83d34" path="res://3D_Models/minecraft_elytra.tscn" id="10_gw3q1"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96558, 0.444001, -0.316628)
+
+[node name="InfromationUi" parent="." node_paths=PackedStringArray("_playerNode") instance=ExtResource("1_h78jt")]
+mouse_filter = 2
+_playerNode = NodePath("../PlayerNode")
+
+[node name="Camera3D2" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 2, 6)
+current = true
+script = ExtResource("2_13ma3")
+target = NodePath("../PlayerNode")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D2"]
+transform = Transform3D(0.714702, 0.693624, 0.0899286, -0.699297, 0.706134, 0.111171, 0.0136092, -0.142341, 0.989724, 0, 0, 1.51)
+
+[node name="PlayerNode" type="Node3D" parent="." node_paths=PackedStringArray("_classicPlayer", "_slimPlayer", "_cape", "_elytra")]
+script = ExtResource("3_y8g58")
+_classicPlayer = NodePath("Minecraft-Classic-Player")
+_slimPlayer = NodePath("Minecraft-Slim-Player")
+_cape = NodePath("Minecraft-Cape")
+_elytra = NodePath("Minecraft-Elytra")
+_playerMaterial = ExtResource("4_2n0rv")
+_playerAccesoryMaterial = ExtResource("5_adhdh")
+_capeMaterial = ExtResource("6_de7q5")
+
+[node name="Minecraft-Classic-Player" parent="PlayerNode" instance=ExtResource("7_freum")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Minecraft-Slim-Player" parent="PlayerNode" instance=ExtResource("8_gbweu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
+
+[node name="Minecraft-Cape" parent="PlayerNode" instance=ExtResource("9_2yjio")]
+transform = Transform3D(-4.30473e-08, -7.5904e-09, -1, -0.173648, 0.984808, 0, 0.984808, 0.173648, -4.37114e-08, 0, -0.599, -0.864)
+
+[node name="Cape" parent="PlayerNode/Minecraft-Cape" index="0"]
+surface_material_override/0 = ExtResource("6_de7q5")
+
+[node name="Minecraft-Elytra" parent="PlayerNode" instance=ExtResource("10_gw3q1")]
+transform = Transform3D(-4.10753e-08, -1.49502e-08, -1, -0.34202, 0.939693, 0, 0.939693, 0.34202, -4.37114e-08, 0, -0.811, -1.51458)
+visible = false
+
+[editable path="PlayerNode/Minecraft-Cape"]
