@@ -1,11 +1,8 @@
 using Godot;
-using Mojang.Api.Skins;
 using Mojang.Api.Skins.Data;
 using Mojang.Api.Skins.Godot.src.Nodes;
-using System.Text;
-using System.Threading.Tasks;
-using System;
 
+namespace Mojang.Api.Skins.Godot.src.UI;
 public partial class SkinPartSelector : Control
 {
     private static readonly SkinPart[] _availableSkinParts = new SkinPart[]
@@ -70,7 +67,7 @@ public partial class SkinPartSelector : Control
         elytraButton.MouseExited += () => Button_MouseExited(elytraButton);
     }
 
-   
+
     public override void _Ready()
     {
         _elytraButtonBackground = (ColorRect)FindChild("ElytraButton-Background");
@@ -93,8 +90,8 @@ public partial class SkinPartSelector : Control
             _showCapePart = CapePart.Elytra_FrontSide;
             _playerNode.Cape.Visible = false;
 
-            if (_showCape && _currentPlayerData.Cape is not null)           
-                _playerNode.Elytra.Visible = true;            
+            if (_showCape && _currentPlayerData.Cape is not null)
+                _playerNode.Elytra.Visible = true;
 
             _elytraButtonBackground.GetNode<ColorRect>("Selected-ColorRect").Visible = false;
         }
@@ -118,16 +115,16 @@ public partial class SkinPartSelector : Control
     {
         if (visibility && _currentPlayerData.Cape is null) return;
 
-        if (_showCapePart == CapePart.FrontSide)        
-            _playerNode.Cape.Visible = visibility;        
-        else        
-            _playerNode.Elytra.Visible = visibility;        
+        if (_showCapePart == CapePart.FrontSide)
+            _playerNode.Cape.Visible = visibility;
+        else
+            _playerNode.Elytra.Visible = visibility;
     }
 
     private void Load2DSkinParts(PlayerData playerData)
     {
-        foreach (var skinPart in _availableSkinParts)        
-            SetBodyPart(playerData, skinPart);        
+        foreach (var skinPart in _availableSkinParts)
+            SetBodyPart(playerData, skinPart);
 
         if (playerData.Cape is null)
         {
@@ -158,13 +155,13 @@ public partial class SkinPartSelector : Control
         capeButton.MouseExited += () => Button_MouseExited(capeButton);
     }
 
-    private void Button_MouseExited(TextureButton sender)
+    private static void Button_MouseExited(TextureButton sender)
     {
         var hoverColorRect = sender.GetParent().GetNode<ColorRect>("Hover-ColorRect");
         hoverColorRect.Visible = false;
     }
 
-    private void Button_MouseEntered(TextureButton sender)
+    private static void Button_MouseEntered(TextureButton sender)
     {
         var hoverColorRect = sender.GetParent().GetNode<ColorRect>("Hover-ColorRect");
         hoverColorRect.Visible = true;
@@ -250,7 +247,6 @@ public partial class SkinPartSelector : Control
 
     private ColorRect GetBackground(CapePart capePart)
     {
-        var partName = capePart.ToString();
         var bodyControl = GetNode("Player-Cape");
 
         var background = $"{capePart}-Background";

@@ -62,36 +62,21 @@ public class PlayerModel3D
 
     public MeshInstance3D GetSkinMeshPart(SkinPart skinPart)
     {
-        switch (skinPart)
+        return skinPart switch
         {
-            case SkinPart.Head_FrontSide:
-                return Head;
-            case SkinPart.Body_FrontSide:
-                return Body;
-            case SkinPart.LeftArm_FrontSide:
-                return LeftArm;
-            case SkinPart.RightArm_FrontSide:
-                return RightArm;
-            case SkinPart.LeftLeg_FrontSide:
-                return LeftLeg;
-            case SkinPart.RightLeg_FrontSide:
-                return RightLeg;
-
-            case SkinPart.HeadAccesory_FrontSide:
-                return HeadOut;
-            case SkinPart.BodyAccesory_FrontSide:
-                return BodyOut;
-            case SkinPart.LeftArmAccesory_FrontSide:
-                return LeftArmOut;
-            case SkinPart.RightArmAccesory_FrontSide:
-                return RightArmOut;
-            case SkinPart.LeftLegAccesory_FrontSide:
-                return LeftLegOut;
-            case SkinPart.RightLegAccesory_FrontSide:
-                return RightLegOut;
-
-            default:
-                return null;
-        }
+            SkinPart.Head_FrontSide => Head,
+            SkinPart.Body_FrontSide => Body,
+            SkinPart.LeftArm_FrontSide => LeftArm,
+            SkinPart.RightArm_FrontSide => RightArm,
+            SkinPart.LeftLeg_FrontSide => LeftLeg,
+            SkinPart.RightLeg_FrontSide => RightLeg,
+            SkinPart.HeadAccesory_FrontSide => HeadOut,
+            SkinPart.BodyAccesory_FrontSide => BodyOut,
+            SkinPart.LeftArmAccesory_FrontSide => LeftArmOut,
+            SkinPart.RightArmAccesory_FrontSide => RightArmOut,
+            SkinPart.LeftLegAccesory_FrontSide => LeftLegOut,
+            SkinPart.RightLegAccesory_FrontSide => RightLegOut,
+            _ => null,
+        };
     }
 }

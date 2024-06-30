@@ -1,12 +1,13 @@
 using Godot;
-using Mojang.Api.Skins.Data;
-using Mojang.Api.Skins.Godot.src.Nodes;
 using Mojang.Api.Skins;
+using Mojang.Api.Skins.Data;
+using Mojang.Api.Skins.Godot.src.Data;
+using Mojang.Api.Skins.Godot.src.Nodes;
 using System;
 using System.Text;
 using System.Threading.Tasks;
-using Mojang.Api.Skins.Godot.src.Data;
 
+namespace Mojang.Api.Skins.Godot.src.UI;
 public partial class InfromationUI : Control
 {
     [Export]
@@ -19,7 +20,7 @@ public partial class InfromationUI : Control
     private ColorRect _elytraButtonBackground;
     private OptionButton _animationOptionButton;
     private TextureButton _headTextureButton;
-    private SkinsClient _client;
+    private ISkinsClient _client;
     private SkinPartSelector _skinPartSelector;
 
     public override void _Ready()
@@ -35,7 +36,7 @@ public partial class InfromationUI : Control
         _elytraButtonBackground = (ColorRect)FindChild("ElytraButton-Background");
         var animationC = GetNode<Control>("AnimationControl");
         _animationOptionButton = animationC.GetNode<OptionButton>("AnimationOptionButton");
-        _animationOptionButton.ItemSelected += _animationOptionButton_ItemSelected;
+        _animationOptionButton.ItemSelected += AnimationOptionButton_ItemSelected;
         _animationOptionButton.AddItem("Walking", 1);
         _animationOptionButton.AddItem("Breathing", 2);
 
@@ -48,19 +49,19 @@ public partial class InfromationUI : Control
     }
 
 
-    private void _animationOptionButton_ItemSelected(long index)
+    private void AnimationOptionButton_ItemSelected(long index)
     {
         _playerNode.StartAnimation(_animationOptionButton.GetItemText((int)index));
     }
 
 
-    private void Button_MouseExited(TextureButton sender)
+    private static void Button_MouseExited(TextureButton sender)
     {
         var hoverColorRect = sender.GetParent().GetNode<ColorRect>("Hover-ColorRect");
         hoverColorRect.Visible = false;
     }
 
-    private void Button_MouseEntered(TextureButton sender)
+    private static void Button_MouseEntered(TextureButton sender)
     {
         var hoverColorRect = sender.GetParent().GetNode<ColorRect>("Hover-ColorRect");
         hoverColorRect.Visible = true;
@@ -94,7 +95,7 @@ public partial class InfromationUI : Control
         _skinPartSelector.SetTextures(_currentPlayerData);
         ShowSkinInfromation();
         SetHeadTexture();
-     
+
         _playerNode.ChangeTextures(_currentPlayerData);
         _playerNode.SlimPlayerModel.PlayerModel.Visible = false;
         _playerNode.ClassicPlayerModel.PlayerModel.Visible = true;

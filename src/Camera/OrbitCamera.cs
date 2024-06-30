@@ -3,22 +3,18 @@
 namespace Mojang.Api.Skins.Godot.src.Camera;
 public partial class OrbitCamera : Camera3D
 {
-
-    private float zoomSpeed = 0.1f; // Geschwindigkeit des Zooms, anpassbar
-    private float minZoomDistance = 2.0f; // Minimale Entfernung zur Kamera
-    private float maxZoomDistance = 10.0f; // Maximale Entfernung zur Kamera
-
     [Export]
     public float RotationSpeed = 0.005f;
 
-
     [Export]
-
     private Node3D target;
 
+    private float zoomSpeed = 0.1f;
+    private float minZoomDistance = 2.0f;
+    private float maxZoomDistance = 10.0f;
     private Vector3 originalOffset;
-    private float minY = -1.0f; // Minimaler Y-Rotationswinkel
-    private float maxY = 1.0f;  // Maximaler Y-Rotationswinkel
+    private float minY = -1.0f;
+    private float maxY = 1.0f; 
 
     public override void _Ready()
     {
@@ -64,9 +60,6 @@ public partial class OrbitCamera : Camera3D
                 LookAt(target.GlobalTransform.Origin, Vector3.Up);
             }
         }
-
-
-
     }
 
 }
